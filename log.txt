@@ -1,18 +1,18 @@
-2026-02-28 13:15:19 UTC
+2026-02-28 21:31:58 UTC
 macOS-15.6.1-arm64-arm-64bit
 Ren'Py 8.5.2.26010301
 
 Early init took 46 ms
-Loading error handling took 26 ms
-Loading script took 185 ms
-Loading save slot metadata took 24 ms
+Loading error handling took 25 ms
+Loading script took 187 ms
+Loading save slot metadata took 26 ms
 Loading persistent took 0 ms
-Running init code took 40 ms
+Running init code took 38 ms
 Loading analysis data took 3 ms
 Analyze and compile ATL took 1 ms
-Reloading save slot metadata took 7 ms
+Reloading save slot metadata took 8 ms
 Backing up script files to "/Users/fayyu/Library/RenPy/backups/Maxwell's Travelling Circus":
-Dump and make backups took 37 ms
+Dump and make backups took 36 ms
 Cleaning cache took 0 ms
 Making clean stores took 0 ms
 Initial gc took 27 ms
@@ -26,7 +26,7 @@ Save screen analysis took 10 ms
 Save pyanalysis took 0 ms
 Save bytecode took 26 ms
 Running _start took 1 ms
-Interface start took 1122 ms
+Interface start took 506 ms
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1440, 900)
@@ -36,38 +36,5 @@ Vendor: 'Apple'
 Renderer: 'Apple M1'
 Version: '2.1 Metal - 89.4'
 Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 4278190080), 'shifts': (16, 8, 0, 24), 'losses': (0, 0, 0, 0), 'current_w': 1440, 'current_h': 900, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(1440, 785) drawable=(2880, 1570)
+Screen sizes: virtual=(1920, 1080) physical=(1396, 785) drawable=(2792, 1570)
 Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(1440, 785) drawable=(2880, 1570)
-Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/script.rpy", line 50, in script
-    show ns at moveoutright
-  File "renpy/ast.py", line 1357, in execute
-    show_imspec(self.imspec, atl=getattr(self, "atl", None))
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/ast.py", line 730, in show_imspec
-    renpy.config.show(
-    ~~~~~~~~~~~~~~~~~^
-        name, at_list=at_list, layer=layer, what=expression, zorder=zorder, tag=tag, behind=behind, atl=atl
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "renpy/exports/displayexports.py", line 498, in show
-    img = i(img)  # type: ignore
-          ~^^^^^                
-  File "renpy/display/movetransition.py", line 555, in MoveTransition
-    raise Exception(
-        "MoveTransition can only be applied to one or all layers, not %s." % type(widget).__name__
-    )
-Exception: MoveTransition can only be applied to one or all layers, not Placeholder.
-
-While running game code:
-  File "game/script.rpy", line 50, in script
-    show ns at moveoutright
-Exception: MoveTransition can only be applied to one or all layers, not Placeholder.
-Cleaning stores took 0 ms
-Load screen analysis took 26 ms
-Analyze screens took 0 ms
-Running _start took 4 ms

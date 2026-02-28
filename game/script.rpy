@@ -1,4 +1,5 @@
-﻿
+﻿# implement lofi
+# bug where maxwell and aloutette overlap in the end
 define n = Character("Nyra")
 define m = Character ("Maxwell") 
 define s = Character ("Siegfried")
@@ -296,6 +297,7 @@ label innercircus:
     show ns at left
     pause 0.5
     hide ns with fade
+
     pause 1.0
     show snorm at right
     
