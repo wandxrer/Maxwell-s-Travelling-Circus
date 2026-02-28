@@ -64,7 +64,7 @@ label circus
 
 label inner circus
     
-    scene inner circus
+    scene inner circus people
     show nyra -
     n "(It’s surprisingly normal here. I was expecting some ominous darkness but…)"
     n "(People are joking and chatting without a care in the world.)"
@@ -86,6 +86,14 @@ label inner circus
 
     m "Welcome to Maxwell’s Travelling Circus. I’m the Ringmaster, Maxwell."
     m "Luckily for you, you’re in the right place! Of course, I may not be the most talented individual, but I believe that all of our performers are equally talented."
+    m "There are rules you must follow to keep order within the circus, and consequences if you cannot abide by them."
+    m "Of course, if you don’t trust in my ability to punish thoroughly, Alouette is strict enough for all of us!"
+    n "(Alouette… I know that name. She’s that serial killer that completely disappeared off the radar a few months ago!)"
+    m "You may go now. Siegfried will help you get settled down."
+
+    scene black
+    pause 2.0
+    scene inner circus 
 
     pause 3.0
 
