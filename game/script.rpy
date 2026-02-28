@@ -11,7 +11,7 @@ define v2 = Character ("Voice Two")
 image m ="maxwell happy.png"
 image mxevil = "maxwell evil.png"
 image mxyippee = "maxwell yippee.png"
-image alkind 
+
 
 label start:
 
