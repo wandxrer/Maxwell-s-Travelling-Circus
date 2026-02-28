@@ -8,12 +8,15 @@ define lz = Character ("Lisbeth")
 define v1 = Character ("Voice One")
 define v2 = Character ("Voice Two")
 
-image maxwell="maxwell yippee.png"
+image m ="maxwell happy.png"
+image mxevil = "maxwell evil.png"
+image mxyippee = "maxwell yippee.png"
+image alkind 
 
 label start:
 
     scene town square night
-    show nyra neutral
+    show nyra neutral at center
 
     n "(Thank god they’re leaving in a few hours.)"
     n "(Nothing’s happened to our town so far, but I have a feeling something’s going to go wrong soon...)"
@@ -31,14 +34,10 @@ label start:
 label house: 
     
     scene house morning
-    show maxwell at truecenter 
 
     n "Mrs. Loville? Is Lisbeth home?"
     msl "Nyra, is that you? I was just about to find you. Lisbeth didn’t return last night!"
     n "What? But I saw her walking with Anya."
-
-    hide maxwell 
-
     n "(If that wasn’t Anya… then who was that? And why was Lisbeth with her?)"
     n "(No one’s dared to wear pigtails since…)"
     n "(Surely not. I mean, why would Lisbeth go near the circus?)"
@@ -189,8 +188,8 @@ label innercircus:
     m "I’m sure someone like you can’t have felt compelled to join my troupe all of a sudden."
 
     hide maxwell
-    show maxwell calm at right
-
+    show maxwell at right
+    #calm
     "(Ringmaster Maxwell’s smile is perfectly polite and kind, but there’s an unmistakable edge of murderous anger.)"
     "(He may not be as well known as Alouette in the criminal world, but his intimidating aura suggests he wasn’t just some petty thief.)"
     "(Where’s the polite, humble man from before?)"

@@ -2,9 +2,17 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 43: end of line expected.
-    show maxwell yippee.png
-                       ^
+File "game/script.rpy", line 12: expected '=' not found.
+    image m.evil = "maxwell evil.png"
+           ^
+
+File "game/script.rpy", line 13: expected '=' not found.
+    image m.yippee = "maxwell "
+           ^
+
+File "game/script.rpy", line 18: end of line expected.
+    show m.evil at left
+          ^
 
 Ren'Py Version: Ren'Py 8.5.2.26010301
-Sat Feb 28 14:42:26 2026
+Sat Feb 28 17:20:50 2026
