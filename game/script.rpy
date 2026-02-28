@@ -1,8 +1,8 @@
 ﻿
 define n = Character("Nyra")
 define m = Character ("Maxwell") 
-define a = Character ("Siegfried")
-define at = Character ("Alouette")
+define s = Character ("Siegfried")
+define a = Character ("Alouette")
 define msl = Character ("Mrs. Loville")
 
 image maxwell="maxwell yippee.png"
@@ -59,15 +59,36 @@ label circus
     n "(Two…)"
     n "One!"
 
-    hide nyra
+    hide nyra -
     scene black
 
 label inner circus
     
     scene inner circus
-
+    show nyra -
     n "(It’s surprisingly normal here. I was expecting some ominous darkness but…)"
     n "(People are joking and chatting without a care in the world.)"
+
+    show siegfried
+
+    n "Excuse me? Where can I find Pride?"
+    s "What do you need the Ringmaster for?"
+    n "I’m here for the… the recruitments for performers!"
+    s "Oh, well you’re quite late, aren’t you? The others have already gone to the Ringmaster’s office. I’ll take you there now. If we’re quick, you can make it."
+    n "Thank you."
+
+    hide siegfried
+
+    n "(How kind of him. I thought they’d all be snappish and mean off the bat.)"
+    n "(I did hear a rumour that night was when things actually happened. I need to find Lisbeth and get out of here before that.)"
+
+    show nyra at right 
+
+    m "Welcome to Maxwell’s Travelling Circus. I’m the Ringmaster, Maxwell."
+    m "Luckily for you, you’re in the right place! Of course, I may not be the most talented individual, but I believe that all of our performers are equally talented."
+
+    pause 3.0
+
 
 
 
