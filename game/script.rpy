@@ -8,10 +8,10 @@ define lz = Character ("Lisbeth")
 define v1 = Character ("Voice One")
 define v2 = Character ("Voice Two")
 
-image m ="maxwell happy.png"
+image m = "maxwell happy.png"
 image mxevil = "maxwell evil.png"
 image mxyippee = "maxwell yippee.png"
-
+image alkind = 
 
 label start:
 
