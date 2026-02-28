@@ -1,40 +1,13 @@
-2026-02-28 11:05:13 UTC
+2026-02-28 12:32:09 UTC
 macOS-15.6.1-arm64-arm-64bit
 Ren'Py 8.5.2.26010301
 
 Early init took 45 ms
-Loading error handling took 39 ms
-Loading script took 745 ms
-Loading save slot metadata took 22 ms
+Loading error handling took 41 ms
+Loading script took 787 ms
+Loading save slot metadata took 24 ms
 Loading persistent took 0 ms
-
-File "game/script.rpy", line 229: end of line expected.
-    show alom with fade at right
-                        ^
-
-File "game/script.rpy", line 265: end of line expected.
-    show alom with fade at right
-                        ^
-DPI scale factor: 1.000000
-Interface start took 2885 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 1440, 900)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'Apple'
-Renderer: 'Apple M1'
-Version: '2.1 Metal - 89.4'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 4278190080), 'shifts': (16, 8, 0, 24), 'losses': (0, 0, 0, 0), 'current_w': 1440, 'current_h': 900, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(1223, 688) drawable=(2446, 1376)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 4 ms
-Loading error handling took 13 ms
-Loading script took 140 ms
-Loading save slot metadata took 13 ms
-Loading persistent took 0 ms
-Running init code took 64 ms
+Running init code took 39 ms
 Loading analysis data took 3 ms
 Analyze and compile ATL took 1 ms
 Reloading save slot metadata took 6 ms
@@ -42,18 +15,18 @@ Backing up script files to "/Users/fayyu/Library/RenPy/backups/Maxwell's Travell
 Dump and make backups took 37 ms
 Cleaning cache took 0 ms
 Making clean stores took 0 ms
-Initial gc took 28 ms
+Initial gc took 27 ms
 DPI scale factor: 1.000000
 Creating interface object took 0 ms
 Init translation took 0 ms
 Cleaning stores took 0 ms
 Load screen analysis took 0 ms
 Analyze screens took 8 ms
-Save screen analysis took 10 ms
+Save screen analysis took 11 ms
 Save pyanalysis took 0 ms
-Save bytecode took 1 ms
+Save bytecode took 27 ms
 Running _start took 1 ms
-Interface start took 191 ms
+Interface start took 585 ms
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1440, 900)
@@ -65,73 +38,7 @@ Version: '2.1 Metal - 89.4'
 Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 4278190080), 'shifts': (16, 8, 0, 24), 'losses': (0, 0, 0, 0), 'current_w': 1440, 'current_h': 900, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
 Screen sizes: virtual=(1920, 1080) physical=(1223, 688) drawable=(2446, 1376)
 Maximum texture size: 4096x4096
-
-Full traceback:
-  File "game/script.rpy", line 48, in script
-    show ns at moveoutright
-  File "renpy/ast.py", line 1357, in execute
-    show_imspec(self.imspec, atl=getattr(self, "atl", None))
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/ast.py", line 730, in show_imspec
-    renpy.config.show(
-    ~~~~~~~~~~~~~~~~~^
-        name, at_list=at_list, layer=layer, what=expression, zorder=zorder, tag=tag, behind=behind, atl=atl
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "renpy/exports/displayexports.py", line 498, in show
-    img = i(img)  # type: ignore
-          ~^^^^^                
-  File "renpy/display/movetransition.py", line 555, in MoveTransition
-    raise Exception(
-        "MoveTransition can only be applied to one or all layers, not %s." % type(widget).__name__
-    )
-Exception: MoveTransition can only be applied to one or all layers, not Placeholder.
-
-While running game code:
-  File "game/script.rpy", line 48, in script
-    show ns at moveoutright
-Exception: MoveTransition can only be applied to one or all layers, not Placeholder.
-
-Full traceback:
-  File "game/script.rpy", line 323, in script
-    scene black with Fade(5.0)
-  File "renpy/ast.py", line 1581, in execute
-    renpy.exports.with_statement(trans, paired=paired)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/exports/statementexports.py", line 260, in with_statement
-    return renpy.game.interface.do_with(trans, paired, clear=clear)
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/core.py", line 1478, in do_with
-    return self.interact(
-           ~~~~~~~~~~~~~^
-        trans_pause=True, suppress_overlay=not renpy.config.overlay_during_with, mouse="with", clear=clear
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "renpy/display/core.py", line 2154, in interact
-    repeat, rv = self.interact_core(
-                 ~~~~~~~~~~~~~~~~~~^
-        preloads=preloads,
-        ^^^^^^^^^^^^^^^^^^
-    ...<4 lines>...
-        **kwargs,
-        ^^^^^^^^^
-    )
-    ^
-  File "renpy/display/core.py", line 2623, in interact_core
-    trans = instantiate_transition(None, old_root, layers_root)
-            ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/core.py", line 2539, in instantiate_transition
-    trans = self.ongoing_transition[layer](old_widget=old_d, new_widget=new_d)
-            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-TypeError: Fade() missing 2 required positional arguments: 'hold_time' and 'in_time'
-
-While running game code:
-  File "game/script.rpy", line 323, in script
-    scene black with Fade(5.0)
-TypeError: Fade() missing 2 required positional arguments: 'hold_time' and 'in_time'
 Cleaning stores took 0 ms
-Load screen analysis took 26 ms
+Load screen analysis took 25 ms
 Analyze screens took 0 ms
 Running _start took 3 ms

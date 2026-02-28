@@ -16,13 +16,15 @@ image almenace = "alouette menace.png"
 image almur = "alouette murder.png"
 image alom = "alouette ominous.png"
 image sconf = "siege conf.png"
-image snorm = "siege norm.png"
+image snorm = "sieg norm.png"
 image som = "siege ominous.png"
 image ssad = "siege sad.png"
 # image nd = "nyra determined.png"
 # image ns = "nyra scared.png"
 # image nsh = "nyra shocked.png"
 # image nsm = "nyra smiling.png"
+
+
 
 label start:
 
@@ -77,7 +79,8 @@ label house:
     scene black with Fade(1.0, 1.0, 1.0)
 
 label outsidecircus:
-    play audio circus!
+    play music "circus.mp3"
+
     scene circus
     show nd with moveinleft
 
@@ -98,7 +101,7 @@ label outsidecircus:
     n "(But Lisbeth’s my friend, and I promised Mrs. Loville..!)"
     n "You can do this, Nyra."
 
-    play music circus! fadeout
+    play music "circus.mp3" fadeout 2.0
 
     n "(Three…)"
     n "(Two…)"
@@ -106,6 +109,7 @@ label outsidecircus:
 
     hide nd with dissolve
     scene black with Fade(1.0, 1.0, 1.0)
+    stop music
 
 label storeroom:
 
@@ -155,14 +159,14 @@ label storeroom:
 
 label innercircus:
     
-    play music circus lil creepy fadein
+    play music "circus lil creepy.mp3"
     scene inner circus
-    show nd with moveinleft 
+    show nd at left
 
     n "(It’s surprisingly normal here. I was expecting some ominous darkness but…)"
     n "(People are joking and chatting without a care in the world.)"
 
-    show snorm at right
+    show snorm 
     
     n "Excuse me? Where can I find Pride?"
 
@@ -172,10 +176,11 @@ label innercircus:
     s "What do you need the Ringmaster for?"
 
     hide nd
-    show nsm at center
+    show nsm at left
 
     n "I’m here for the… the recruitments for performers!"
 
+    hide sconf
     show snorm at right
 
     s "Oh, well you’re quite late, aren’t you? The others have already gone to the Ringmaster’s office. I’ll take you there now. If we’re quick, you can make it."
@@ -188,12 +193,12 @@ label innercircus:
 
     hide nsm
     scene black with Fade(1.0, 1.0, 1.0)
-    play music circus lil creepy fadeout
+    play music "circus lil creepy.mp3" fadein 1.0 loop
 
     scene inner circus
     show nsm at right 
     show mxyippee with moveinleft
-    play music circus creepy fadein
+    play music "circus creepy"
     
     m "Welcome to Maxwell’s Travelling Circus. I’m the Ringmaster, Maxwell."
 
@@ -227,10 +232,10 @@ label innercircus:
     
     scene black
     pause 2.0
-    play music circus creepy fadeout
+    play music "circus creepy.mp3" fadeout 1.0
     scene inner circus 
     show nd at left
-    play music circus lil creepy fadein
+    play music "circus lil creepy.mp3" fadein 1.0 
 
     n "(There’s no one here. Where’d everyone go? This is a perfect time to look for Lisbeth.)"
 
@@ -273,45 +278,68 @@ label innercircus:
     show alom at right
     hide nd
     show nsh at left
-    play music circus lil creepy fadeout
-    play music circus creepy fadein
+    play music "circus lil creepy.mp3" fadeout 1.0
+    play music "circus creepy.mp3" fadein 1.0
 
     a "Who’s there?"
 
     hide alom
     show almur at center 
+
     a "Come out, little mouse! You know you’re not meant to be here~"
+
     pause 1.0
     hide nsh
     show ns at left
     pause 0.5
     hide ns with fade
     pause 1.0
-    show snorm with moveinleft
-
+    show snorm at right
+    hide almur
+    show alkind at center
     s "Alouette, what are you doing? The auctions’ starting and they’ve already sold off a bunch of the good stuff. I heard Sloth already scored a whole set of new organs."
+
+    hide snorm
+    show som at center
+
     s "Whatever it is, I’m sure it can wait. No one’s getting out alive tonight."
     n "(...Right. I’m in the underworld now. Nothing functions the same. They’re all criminals with no conscience.)"
+
+    hide alkind
+    show alom at center
+
     a "Ugh, him and his organs! Of course he wouldn’t leave anything good for me!"
     s "Let’s hurry before he and Greed take everything else."
 
-    hide almur
-    hide sconf #placeholder for siege
-    show nyra at left
+    hide alom
+    hide som
+    show ns at left
 
     n "Phew…"
 
-    show maxwell with moveinright
+    show m at right
 
     m "Busy day?"
+
+    hide ns 
+    show nsh at left 
+
     n "What the-"
+
+    hide m
+    show mxevil at right
+
     m "I’d be quiet if I were you."
+
+    hide nsh
+    show ns
+
     m "So, why are you actually here?"
     m "I’m sure someone like you can’t have felt compelled to join my troupe all of a sudden."
 
-    hide maxwell
-    show maxwell at right
-    #calm
+    hide mxevil
+    show m at right
+    
     "(Ringmaster Maxwell’s smile is perfectly polite and kind, but there’s an unmistakable edge of murderous anger.)"
     "(He may not be as well known as Alouette in the criminal world, but his intimidating aura suggests he wasn’t just some petty thief.)"
     "(Where’s the polite, humble man from before?)"
@@ -322,13 +350,27 @@ label innercircus:
     n "(The way he can act like this is just a pleasant teatime chat, while also smiling like he wants to carve out my skull is so frightening.)"
     n "(I can’t run. There’s nowhere to go, and I haven’t found Lisbeth.)"
 
-    show alouette at center
+    show alom at center 
 
     a "So there’s a mouse hiding here after all~"
-    n "(Alouette!? I thought she and Siegfried left already!)"
-    s "Lisbeth’s friend, hmm? Then I’m sure you’ll be overjoyed to join her."
-    n "Join her!? What do you-"
+
+    hide ns
+    show nsh at left
+    hide alom
+    show almur at center
+
+    n "(Alouette!? I thought she and Siegfried left already!)" with vpunch
+
+    hide nsh
+    show ns at left
+
+    a "Lisbeth’s friend..? Then I’m sure you’ll be overjoyed to join her."
+    n "Join her!? What do you-" with vpunch
+
+    hide m
+    show mxevil at right
+
     m "Good night, Nyra."
-    
-    play music circus creepy fadeout 9.5
+
+    play music "circus creepy.mp3" fadeout 9.5 
     scene black with Fade(10.0, 0.0, 0.0)
