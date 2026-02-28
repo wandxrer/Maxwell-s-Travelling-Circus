@@ -5,6 +5,8 @@ define a = Character ("Siegfried")
 define at = Character ("Alouette")
 define msl = Character ("Mrs. Loville")
 
+image maxwell="maxwell yippee.png"
+
 label start:
 
     scene town square night
@@ -31,15 +33,18 @@ label start:
 
     n "And here I thought we’d go home together. I guess I’ll go check on her tomorrow."
 
-scene black
+    scene black
 label house: 
-
+    
     scene house morning
+
+    show maxwell at center 
 
     n "Mrs. Loville? Is Lisbeth home?"
 
     msl "Nyra, is that you? I was just about to find you. Lisbeth didn’t return last night!"
 
-show maxwell yippee
+    
+
 
 
