@@ -14,7 +14,8 @@ image mxyippee = "maxwell yippee.png"
 image alkind = "alouette kind.png"
 image almenace = "alouette menace.png"
 image almur = "alouette murder.png"
-image sconf = "sieg conf.png"
+image alom = "alouette ominous.png"
+image sconf = "siege conf.png"
 image snorm = "siege norm.png"
 image som = "siege ominous.png"
 image ssad = "siege sad.png"
@@ -27,6 +28,7 @@ label start:
 
     scene black with Fade(1.0, 1.0, 1.0)
     scene town 
+    
     # show nsm at moveinleft 
 
     n "(Thank god they’re leaving in a few hours.)"
@@ -75,7 +77,7 @@ label house:
     scene black with Fade(1.0, 1.0, 1.0)
 
 label outsidecircus:
-    
+    play audio circus!
     scene circus
     show nd with moveinleft
 
@@ -95,6 +97,9 @@ label outsidecircus:
 
     n "(But Lisbeth’s my friend, and I promised Mrs. Loville..!)"
     n "You can do this, Nyra."
+
+    play music circus! fadeout
+
     n "(Three…)"
     n "(Two…)"
     n "One!"
@@ -137,7 +142,7 @@ label storeroom:
     n "(The voices are getting further away...)"
 
     scene storeroom with fade
-    show nd with fade
+    show nd 
 
     n "(So there was a light here after all.)"
     n "(The girl they were talking about… I’m sure it’s Lisbeth. They’re planning to use her as a lab rat.)"
@@ -150,13 +155,14 @@ label storeroom:
 
 label innercircus:
     
+    play music circus lil creepy fadein
     scene inner circus
     show nd with moveinleft 
 
     n "(It’s surprisingly normal here. I was expecting some ominous darkness but…)"
     n "(People are joking and chatting without a care in the world.)"
 
-    show snorm with fade at right
+    show snorm at right
     
     n "Excuse me? Where can I find Pride?"
 
@@ -182,59 +188,106 @@ label innercircus:
 
     hide nsm
     scene black with Fade(1.0, 1.0, 1.0)
+    play music circus lil creepy fadeout
 
-    show nyra at right 
-
+    scene inner circus
+    show nsm at right 
+    show mxyippee with moveinleft
+    play music circus creepy fadein
+    
     m "Welcome to Maxwell’s Travelling Circus. I’m the Ringmaster, Maxwell."
-    m "Luckily for you, you’re in the right place! Of course, I may not be the most talented individual, but I believe that all of our performers are equally talented."
-    m "There are rules you must follow to keep order within the circus, and consequences if you cannot abide by them."
-    m "Of course, if you don’t trust in my ability to punish thoroughly, Alouette is strict enough for all of us!"
-    n "(Alouette… I know that name. She’s that serial killer that completely disappeared off the radar a few months ago!)"
-    m "You may go now. Siegfried will help you get settled down."
 
-    hide nyra
+    hide mxyippee
+    show m at center
+
+    m "Luckily for you, you’re in the right place! Of course, I may not be the most talented individual, but I believe that all of our performers are equally talented."
+
+    hide m
+    show mxevil at center
+
+    m "There are rules you must follow to keep order within the circus, and consequences if you cannot abide by them."
+
+    hide mxevil
+    show mxyippee
+
+    m "Of course, if you don’t trust in my ability to punish thoroughly, Alouette is strict enough for all of us!"
+
+    hide nsm
+    show ns at right
+
+    n "(Alouette… I know that name. She’s that serial killer that completely disappeared off the radar a few months ago!)"
+
+    hide mxyippee
+    show m at center
+
+    m "You may go now. Siegfried will help you get settled down."
+    
+    hide m with dissolve
+    hide ns with dissolve
+    
     scene black
     pause 2.0
+    play music circus creepy fadeout
     scene inner circus 
-    show nyra at left
-    
+    show nd at left
+    play music circus lil creepy fadein
+
     n "(There’s no one here. Where’d everyone go? This is a perfect time to look for Lisbeth.)"
 
-    show allouette at right
+    show alom at right
 
     a "Hey. What are you doing?"
 
-    show nyra surprise
+    hide nd
+    show nsh at left
 
-    n "AAAHHHHHHHH!"
+    n "AAAHHHHHHHH!" with vpunch 
     
+    hide alom
+    show alkind at right
+
     a "I didn’t mean to scare you. Everyone else is in the dining hall, I was just curious why you’re here. Are you lost?"
 
-    show nyra
+    pause 2.0
+    hide nsh
+    show nsm at left
 
     n "Y-yeah, I’m lost! It’s a really big circus, and I can’t find my way around.."
     a "I’ll lead you to the dining hall. There’s gonna be a surprise tonight, you know?"
 
-    hide allouette  
-    hide nyra
-    scene black 
-    pause 2.0
+    hide alkind with dissolve
+    hide nsm with dissolve
+    scene black with Fade(1.0, 1.0, 1.0)
     scene inner circus 
-    show nyra with moveinleft
+    show ns at left
 
     n "(Thank god Alouette didn’t sit with me.)"
     n "(I thought my heart was going to burst out of my chest every time she moved!)"
+
+    hide ns
+    show nd at left
+
     n "(Well it’s night-time now, and all the other performers are outside. Alouette told me it was an auction.)"
     n "(I don’t think anyone will realise I’m gone. I just need to find Lisbeth quickly.)"
 
-    show Alouette with moveinright
+    show alom at right
+    hide nd
+    show nsh at left
+    play music circus lil creepy fadeout
+    play music circus creepy fadein
 
     a "Who’s there?"
+
+    hide alom
+    show almur at center 
     a "Come out, little mouse! You know you’re not meant to be here~"
-    
-    hide nyra
     pause 1.0
-    show sconf with moveinleft #placeholder for siege
+    hide nsh
+    show ns at left
+    pause 0.5
+    hide ns with fade
+    pause 1.0
+    show snorm with moveinleft
 
     s "Alouette, what are you doing? The auctions’ starting and they’ve already sold off a bunch of the good stuff. I heard Sloth already scored a whole set of new organs."
     s "Whatever it is, I’m sure it can wait. No one’s getting out alive tonight."
@@ -242,7 +295,7 @@ label innercircus:
     a "Ugh, him and his organs! Of course he wouldn’t leave anything good for me!"
     s "Let’s hurry before he and Greed take everything else."
 
-    hide alouette
+    hide almur
     hide sconf #placeholder for siege
     show nyra at left
 
@@ -272,9 +325,10 @@ label innercircus:
     show alouette at center
 
     a "So there’s a mouse hiding here after all~"
-    n "Alouette!? I thought she and Siegfried left already!)"
+    n "(Alouette!? I thought she and Siegfried left already!)"
     s "Lisbeth’s friend, hmm? Then I’m sure you’ll be overjoyed to join her."
     n "Join her!? What do you-"
     m "Good night, Nyra."
-
-    scene black with Fade(5.0)
+    
+    play music circus creepy fadeout 9.5
+    scene black with Fade(10.0, 0.0, 0.0)

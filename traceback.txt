@@ -1,35 +1,47 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 127, in script
-    show nd at moveoutright
-Exception: MoveTransition can only be applied to one or all layers, not Placeholder.
+  File "game/script.rpy", line 323, in script
+    scene black with Fade(5.0)
+TypeError: Fade() missing 2 required positional arguments: 'hold_time' and 'in_time'
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/script.rpy", line 127, in script
-    show nd at moveoutright
-  File "renpy/ast.py", line 1357, in execute
-    show_imspec(self.imspec, atl=getattr(self, "atl", None))
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/ast.py", line 730, in show_imspec
-    renpy.config.show(
-    ~~~~~~~~~~~~~~~~~^
-        name, at_list=at_list, layer=layer, what=expression, zorder=zorder, tag=tag, behind=behind, atl=atl
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/script.rpy", line 323, in script
+    scene black with Fade(5.0)
+  File "renpy/ast.py", line 1581, in execute
+    renpy.exports.with_statement(trans, paired=paired)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/exports/statementexports.py", line 260, in with_statement
+    return renpy.game.interface.do_with(trans, paired, clear=clear)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/core.py", line 1478, in do_with
+    return self.interact(
+           ~~~~~~~~~~~~~^
+        trans_pause=True, suppress_overlay=not renpy.config.overlay_during_with, mouse="with", clear=clear
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
     )
     ^
-  File "renpy/exports/displayexports.py", line 498, in show
-    img = i(img)  # type: ignore
-          ~^^^^^                
-  File "renpy/display/movetransition.py", line 555, in MoveTransition
-    raise Exception(
-        "MoveTransition can only be applied to one or all layers, not %s." % type(widget).__name__
+  File "renpy/display/core.py", line 2154, in interact
+    repeat, rv = self.interact_core(
+                 ~~~~~~~~~~~~~~~~~~^
+        preloads=preloads,
+        ^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
     )
-Exception: MoveTransition can only be applied to one or all layers, not Placeholder.
+    ^
+  File "renpy/display/core.py", line 2623, in interact_core
+    trans = instantiate_transition(None, old_root, layers_root)
+            ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/core.py", line 2539, in instantiate_transition
+    trans = self.ongoing_transition[layer](old_widget=old_d, new_widget=new_d)
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: Fade() missing 2 required positional arguments: 'hold_time' and 'in_time'
 
 macOS-15.6.1-arm64-arm-64bit arm64
 Ren'Py 8.5.2.26010301
 Maxwells Circus 1.0
-Sat Feb 28 21:33:23 2026
+Sat Feb 28 22:13:44 2026

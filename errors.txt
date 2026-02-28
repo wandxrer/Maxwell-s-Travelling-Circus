@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 112: end of line expected.
-    show ns with fade at center
-                      ^
+File "game/script.rpy", line 229: end of line expected.
+    show alom with fade at right
+                        ^
+
+File "game/script.rpy", line 265: end of line expected.
+    show alom with fade at right
+                        ^
 
 Ren'Py Version: Ren'Py 8.5.2.26010301
-Sat Feb 28 21:27:47 2026
+Sat Feb 28 22:05:13 2026
