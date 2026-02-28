@@ -30,24 +30,24 @@ label start:
 
     scene black with Fade(1.0, 1.0, 1.0)
     scene town 
-    
-    # show nsm at moveinleft 
+    show nsm at left
 
     n "(Thank god they’re leaving in a few hours.)"
-
-    # show ns at left
-
     n "(Nothing’s happened to our town so far, but I have a feeling something’s going to go wrong soon...)"
+
+    hide nsm
+    show ns at left
+
     n "(Speaking of things going wrong, where’s Lisbeth? We promised to walk home together.)"
-    n "Lisbeth, where are you?"
+    n "Lisbeth, where are you?" with vpunch
     "    "
-    n "Lisbeth?"
+    n "Lisbeth?" with vpunch
     "    "
     n "(Is that her in the distance? Who's she walking with? It looks like... I guess she's walking home with her sister.)"
     n "(Did Anya always wear her hair in pigtails?)"
     n "And here I thought we’d go home together. I guess I’ll go check on her tomorrow."
 
-    show ns at moveoutright
+    show ns at offscreenright
 
     scene black with Fade(1.0, 1.0, 1.0)
 
@@ -105,11 +105,14 @@ label outsidecircus:
 
     n "(Three…)"
     n "(Two…)"
+
+    stop music
+
     n "One!"
 
     hide nd with dissolve
     scene black with Fade(1.0, 1.0, 1.0)
-    stop music
+    
 
 label storeroom:
 
@@ -159,7 +162,7 @@ label storeroom:
 
 label innercircus:
     
-    play music "circus lil creepy.mp3"
+    play music "circus lil creepy.mp3" loop
     scene inner circus
     show nd at left
 
@@ -193,12 +196,12 @@ label innercircus:
 
     hide nsm
     scene black with Fade(1.0, 1.0, 1.0)
-    play music "circus lil creepy.mp3" fadein 1.0 loop
+    play music "circus lil creepy.mp3" fadeout 2.0 
 
     scene inner circus
     show nsm at right 
     show mxyippee with moveinleft
-    play music "circus creepy"
+    play music "circus creepy" loop
     
     m "Welcome to Maxwell’s Travelling Circus. I’m the Ringmaster, Maxwell."
 
@@ -295,12 +298,13 @@ label innercircus:
     hide ns with fade
     pause 1.0
     show snorm at right
+    
     hide almur
     show alkind at center
     s "Alouette, what are you doing? The auctions’ starting and they’ve already sold off a bunch of the good stuff. I heard Sloth already scored a whole set of new organs."
 
     hide snorm
-    show som at center
+    show som at right
 
     s "Whatever it is, I’m sure it can wait. No one’s getting out alive tonight."
     n "(...Right. I’m in the underworld now. Nothing functions the same. They’re all criminals with no conscience.)"
@@ -311,8 +315,8 @@ label innercircus:
     a "Ugh, him and his organs! Of course he wouldn’t leave anything good for me!"
     s "Let’s hurry before he and Greed take everything else."
 
-    hide alom
-    hide som
+    hide alom with dissolve
+    hide som with dissolve
     show ns at left
 
     n "Phew…"
@@ -332,7 +336,7 @@ label innercircus:
     m "I’d be quiet if I were you."
 
     hide nsh
-    show ns
+    show ns at left
 
     m "So, why are you actually here?"
     m "I’m sure someone like you can’t have felt compelled to join my troupe all of a sudden."

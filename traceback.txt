@@ -32,4 +32,4 @@ Exception: MoveTransition can only be applied to one or all layers, not Placehol
 macOS-15.6.1-arm64-arm-64bit arm64
 Ren'Py 8.5.2.26010301
 Maxwells Circus 1.0
-Sat Feb 28 23:24:07 2026
+Sun Mar  1 00:15:27 2026
