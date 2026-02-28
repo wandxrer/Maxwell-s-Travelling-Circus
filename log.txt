@@ -10,9 +10,9 @@ Loading persistent took 0 ms
 Running init code took 32 ms
 Loading analysis data took 3 ms
 Analyze and compile ATL took 1 ms
-Reloading save slot metadata took 2 ms
+Reloading save slot metadata took 3 ms
 Backing up script files to "/Users/fayyu/Library/RenPy/backups/Maxwell's Travelling Circus":
-Dump and make backups took 36 ms
+Dump and make backups took 37 ms
 Cleaning cache took 0 ms
 Making clean stores took 0 ms
 Initial gc took 27 ms

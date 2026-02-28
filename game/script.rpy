@@ -124,12 +124,98 @@ label innercircus:
     n "(Alouette… I know that name. She’s that serial killer that completely disappeared off the radar a few months ago!)"
     m "You may go now. Siegfried will help you get settled down."
 
+    hide nyra
     scene black
     pause 2.0
     scene inner circus empty
+    show nyra at left
+    
+    n "(There’s no one here. Where’d everyone go? This is a perfect time to look for Lisbeth.)"
+
+    show allouette at right
+
+    a "Hey. What are you doing?"
+
+    show nyra surprise
+
+    n "AAAHHHHHHHH!"
+    
+    a "I didn’t mean to scare you. Everyone else is in the dining hall, I was just curious why you’re here. Are you lost?"
+
+    show nyra
+
+    n "Y-yeah, I’m lost! It’s a really big circus, and I can’t find my way around.."
+    a "I’ll lead you to the dining hall. There’s gonna be a surprise tonight, you know?"
+
+    hide allouette  
+    hide nyra
+    scene black 
+    pause 2.0
+    scene inner circus empty
+    show nyra with moveinleft
+
+    n "(Thank god Alouette didn’t sit with me.)"
+    n "(I thought my heart was going to burst out of my chest every time she moved!)"
+    n "(Well it’s night-time now, and all the other performers are outside. Alouette told me it was an auction.)"
+    n "(I don’t think anyone will realise I’m gone. I just need to find Lisbeth quickly.)"
+
+    show Alouette with moveinright
+
+    a "Who’s there?"
+    a "Come out, little mouse! You know you’re not meant to be here~"
+    
+    hide nyra
+    pause 1.0
+    show siegfried with moveinleft
+
+    s "Alouette, what are you doing? The auctions’ starting and they’ve already sold off a bunch of the good stuff. I heard Sloth already scored a whole set of new organs."
+    s "Whatever it is, I’m sure it can wait. No one’s getting out alive tonight."
+    n "(...Right. I’m in the underworld now. Nothing functions the same. They’re all criminals with no conscience.)"
+    a "Ugh, him and his organs! Of course he wouldn’t leave anything good for me!"
+    s "Let’s hurry before he and Greed take everything else."
+
+    hide alouette
+    hide siegfried
+    show nyra at left
+
+    n "Phew…"
+
+    show maxwell with moveinright
+
+    m "Busy day?"
+    n "What the-"
+    m "I’d be quiet if I were you."
+    m "So, why are you actually here?"
+    m "I’m sure someone like you can’t have felt compelled to join my troupe all of a sudden."
+
+    hide maxwell
+    show maxwell calm at right
+
+    "(Ringmaster Maxwell’s smile is perfectly polite and kind, but there’s an unmistakable edge of murderous anger.)"
+    "(He may not be as well known as Alouette in the criminal world, but his intimidating aura suggests he wasn’t just some petty thief.)"
+    "(Where’s the polite, humble man from before?)"
+    "(This is the real Maxwell. The proud individual that controlled the entire circus.)"
+
+    n "Ringmaster Maxwell…"
+    m "I trust you heard what they said. I’m afraid neither you nor your friend will be leaving any time soon."
+    n "(The way he can act like this is just a pleasant teatime chat, while also smiling like he wants to carve out my skull is so frightening.)"
+    n "(I can’t run. There’s nowhere to go, and I haven’t found Lisbeth.)"
+
+    show alouette at center
+
+    a "So there’s a mouse hiding here after all~"
+    n "Alouette!? I thought she and Siegfried left already!)"
+    s "Lisbeth’s friend, hmm? Then I’m sure you’ll be overjoyed to join her."
+    n "Join her!? What do you-"
+    m "Good night, Nyra."
+
+    show black 
 
 
-    pause 3.0
+
+
+
+
 
 
 
