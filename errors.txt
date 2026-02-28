@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 14: expected expression
-    image alkind =
-                   ^
+File "game/script.rpy", line 112: end of line expected.
+    show ns with fade at center
+                      ^
 
 Ren'Py Version: Ren'Py 8.5.2.26010301
-Sat Feb 28 20:19:45 2026
+Sat Feb 28 21:27:47 2026

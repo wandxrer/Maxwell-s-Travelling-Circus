@@ -4,22 +4,35 @@ define m = Character ("Maxwell")
 define s = Character ("Siegfried")
 define a = Character ("Alouette")
 define msl = Character ("Mrs. Loville")
-define lz = Character ("Lisbeth")
+define ls = Character ("Lisbeth")
 define v1 = Character ("Voice One")
 define v2 = Character ("Voice Two")
 
-image m = "maxwell happy.png"
-image mxevil = "maxwell evil.png"
+image m = "maxwell mild.png"
+image mxevil = "maxwell sinister.png"
 image mxyippee = "maxwell yippee.png"
-image alkind = "Alouette kind.png"
+image alkind = "alouette kind.png"
+image almenace = "alouette menace.png"
+image almur = "alouette murder.png"
+image sconf = "sieg conf.png"
+image snorm = "siege norm.png"
+image som = "siege ominous.png"
+image ssad = "siege sad.png"
+# image nd = "nyra determined.png"
+# image ns = "nyra scared.png"
+# image nsh = "nyra shocked.png"
+# image nsm = "nyra smiling.png"
 
 label start:
 
     scene black with Fade(1.0, 1.0, 1.0)
-    scene town square night
-    show nyra neutral at center
+    scene town 
+    # show nsm at moveinleft 
 
     n "(Thank god they’re leaving in a few hours.)"
+
+    # show ns at left
+
     n "(Nothing’s happened to our town so far, but I have a feeling something’s going to go wrong soon...)"
     n "(Speaking of things going wrong, where’s Lisbeth? We promised to walk home together.)"
     n "Lisbeth, where are you?"
@@ -30,55 +43,92 @@ label start:
     n "(Did Anya always wear her hair in pigtails?)"
     n "And here I thought we’d go home together. I guess I’ll go check on her tomorrow."
 
-    scene black
+    show ns at moveoutright
+
+    scene black with Fade(1.0, 1.0, 1.0)
 
 label house: 
     
-    scene house morning
+    scene house
+    show nn at left
 
     n "Mrs. Loville? Is Lisbeth home?"
     msl "Nyra, is that you? I was just about to find you. Lisbeth didn’t return last night!"
+
+    show nsh at left
+
     n "What? But I saw her walking with Anya."
+
+    show ns at left
+
     n "(If that wasn’t Anya… then who was that? And why was Lisbeth with her?)"
     n "(No one’s dared to wear pigtails since…)"
     n "(Surely not. I mean, why would Lisbeth go near the circus?)"
     msl "Are you alright?"
+
+    show nsm at left
+
     n "Oh, yes. I just… I think I know where Lisbeth is. I’ll bring her home safely."
     msl "Oh, thank you, Nyra."
+
+    hide nsm with dissolve
+    scene black with Fade(1.0, 1.0, 1.0)
 
 label outsidecircus:
     
     scene circus
+    show nd with moveinleft
 
     n "Hey, hey, hey, wait! Hold on! Stop the circus! Stop driving!"
+
+    hide nd 
+    show ns at center
+
     n "(They’re either ignoring me or they can’t hear me over the sound of the engine.)"
     n "(I can’t let them leave, not when Lisbeth might be on board!)"
     n "(I have to do something. Surely I don’t have to climb onto the circus, do I..?)"
     n "(I mean, this is Maxwell’s Travelling Circus we’re talking about!)"
     n "(I wouldn’t last a minute in there! They’d find a way to make me disappear for sure.)"
+
+    hide ns
+    show nd at center
+
     n "(But Lisbeth’s my friend, and I promised Mrs. Loville..!)"
     n "You can do this, Nyra."
     n "(Three…)"
     n "(Two…)"
     n "One!"
 
-    hide nyra 
-    scene black
+    hide nd with dissolve
+    scene black with Fade(1.0, 1.0, 1.0)
 
 label storeroom:
 
     scene black
 
-    lz "Hello?"
-    lz "Nyra? Anya"
-    lz "Is anyone there?"
+    ls "Hello?"
+    ls "Nyra? Anya?"
+    ls "Is anyone there?"
 
-    show nyra sad
+    pause 2.0
+    show ns with fade 
     
     n "(..Ouch.)"
     n "(It's so dark. My back hurts like crazy. But I think I'm in the circus!)"
+
+    hide ns
+    show nsh at center
+
     v1 "The girl... Yes..."
+
+    hide nsh
+    show nd at center
+
     n "(Someone is coming. I should hide.)"
+
+    hide nd with fade
+    scene black at vpunch
+
     v2 "She's going to be useless and you know it!"
     v1 "If Wrath, of all people, can take an interest in her, it means-"
     v2 "-Wrath’s insane. Just because the girl’s immune to most of Gluttony’s drugs and poisons doesn’t mean-"
@@ -86,7 +136,8 @@ label storeroom:
     v2 "Ugh, why are we always doing the heavy lifting? I thought Pride was recruiting more performers."
     n "(The voices are getting further away...)"
 
-    # now they go in STORE ROOM
+    scene storeroom with fade
+    show nd with fade
 
     n "(So there was a light here after all.)"
     n "(The girl they were talking about… I’m sure it’s Lisbeth. They’re planning to use her as a lab rat.)"
@@ -95,25 +146,42 @@ label storeroom:
     n "(Hold on… Pride was recruiting performers…)"
     n "You got this. Do it for Lisbeth!"
 
+    scene black with Fade(1.0, 1.0, 1.0)
+
 label innercircus:
     
-    scene inner circus people
-    show nyra at left 
+    scene inner circus
+    show nd with moveinleft 
+
     n "(It’s surprisingly normal here. I was expecting some ominous darkness but…)"
     n "(People are joking and chatting without a care in the world.)"
 
-    show siegfried
-
+    show snorm with fade at right
+    
     n "Excuse me? Where can I find Pride?"
+
+    hide snorm
+    show sconf at right
+
     s "What do you need the Ringmaster for?"
+
+    hide nd
+    show nsm at center
+
     n "I’m here for the… the recruitments for performers!"
+
+    show snorm at right
+
     s "Oh, well you’re quite late, aren’t you? The others have already gone to the Ringmaster’s office. I’ll take you there now. If we’re quick, you can make it."
     n "Thank you."
 
-    hide siegfried
-
+    hide snorm with dissolve
+   
     n "(How kind of him. I thought they’d all be snappish and mean off the bat.)"
     n "(I did hear a rumour that night was when things actually happened. I need to find Lisbeth and get out of here before that.)"
+
+    hide nsm
+    scene black with Fade(1.0, 1.0, 1.0)
 
     show nyra at right 
 
@@ -127,7 +195,7 @@ label innercircus:
     hide nyra
     scene black
     pause 2.0
-    scene inner circus empty
+    scene inner circus 
     show nyra at left
     
     n "(There’s no one here. Where’d everyone go? This is a perfect time to look for Lisbeth.)"
@@ -151,7 +219,7 @@ label innercircus:
     hide nyra
     scene black 
     pause 2.0
-    scene inner circus empty
+    scene inner circus 
     show nyra with moveinleft
 
     n "(Thank god Alouette didn’t sit with me.)"
@@ -166,7 +234,7 @@ label innercircus:
     
     hide nyra
     pause 1.0
-    show siegfried with moveinleft
+    show sconf with moveinleft #placeholder for siege
 
     s "Alouette, what are you doing? The auctions’ starting and they’ve already sold off a bunch of the good stuff. I heard Sloth already scored a whole set of new organs."
     s "Whatever it is, I’m sure it can wait. No one’s getting out alive tonight."
@@ -175,7 +243,7 @@ label innercircus:
     s "Let’s hurry before he and Greed take everything else."
 
     hide alouette
-    hide siegfried
+    hide sconf #placeholder for siege
     show nyra at left
 
     n "Phew…"
@@ -209,4 +277,4 @@ label innercircus:
     n "Join her!? What do you-"
     m "Good night, Nyra."
 
-    scene black with fade
+    scene black with Fade(5.0)
