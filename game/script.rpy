@@ -1,6 +1,6 @@
 ﻿# implement lofi
 # bug where maxwell and aloutette overlap in the end
-define n = Character("Nyra", colour = "#4e7ac2")
+define n = Character("Nyra")
 define m = Character ("Maxwell") 
 define s = Character ("Siegfried")
 define a = Character ("Alouette")
@@ -9,25 +9,33 @@ define ls = Character ("Lisbeth")
 define v1 = Character ("Voice One")
 define v2 = Character ("Voice Two")
 
-# maxwell
-image m = "maxwell mild.png"
-image mxevil = "maxwell sinister.png"
-image mxyippee = "maxwell yippee.png"
+#updated for cropped movement
+# maxwell updated
+image m = "maxhappy3.png"
+image mxevil = "maxevil3.png"
+image mxyippee = "maxjoy3.png"
 # alouette updated
 image alkind = "alkind2.png"
 image almur = "almurder2.png"
 image alom = "alouette ominous2.png"
-# siegfried
-image sconf = "siege conf.png"
-image snorm = "sieg norm.png"
-image som = "siege ominous.png"
-image ssad = "siege sad.png"
+# siegfried 
+image sconf = "siege conf2.png"
+image snorm = "siege normal2.png"
+image som = "siege ominous2.png"
+image ssad = "siege sad2.png"
 # nyra updated
 image nd = "nyra determined.png"
 image ns = "nyra scared.png"
 image nsh = "nyra shocked.png"
 image nsm = "nyra smile.png"
 
+# Character(“Amanda”, color=“#ffffff”)
+Character ("Nyra", colour = "#4b83dc")
+Character ("Maxwell", colour = "#611219" ) 
+Character ("Siegfried", colour = "#9e6b34")
+Character ("Alouette", colour = "#6d349e")
+Character ("Mrs. Loville", colour = "#88b9bd")
+Character ("Lisbeth", colour = "#88b9bd")
 
 label start:
 
@@ -57,7 +65,7 @@ label start:
 label house: 
     
     scene house
-    show nn at left
+    show nsm at left
 
     n "Mrs. Loville? Is Lisbeth home?"
     msl "Nyra, is that you? I was just about to find you. Lisbeth didn’t return last night!"

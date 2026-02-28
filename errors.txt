@@ -2,17 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 82: expected end of line
-    play music circus.mp3 1.0
-                          ^
-
-File "game/script.rpy", line 161: expected end of line
-    play music "circus lil creepy.mp3" 1.0
-                                       ^
-
-File "game/script.rpy", line 199: expected end of line
-    play music "circus creepy" 1.0
-                               ^
+File "game/script.rpy", line 35: invalid syntax
+    Character ("Alouette", colour "#6d349e")
+                                  ^^^^^^^^^
 
 Ren'Py Version: Ren'Py 8.5.2.26010301
-Sat Feb 28 23:18:58 2026
+Sun Mar  1 09:47:19 2026
