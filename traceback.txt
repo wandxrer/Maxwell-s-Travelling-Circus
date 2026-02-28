@@ -1,35 +1,36 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 50, in script
-    show ns at moveoutright
-Exception: MoveTransition can only be applied to one or all layers, not Placeholder.
+  File "game/script.rpy", line 3, in script
+    define n = Character("Nyra", "#4e7ac2")
+  File "game/script.rpy", line 3, in <module>
+    define n = Character("Nyra", "#4e7ac2")
+               ~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+TypeError: 'kind' is an invalid keyword argument for str()
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/script.rpy", line 50, in script
-    show ns at moveoutright
-  File "renpy/ast.py", line 1357, in execute
-    show_imspec(self.imspec, atl=getattr(self, "atl", None))
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/ast.py", line 730, in show_imspec
-    renpy.config.show(
-    ~~~~~~~~~~~~~~~~~^
-        name, at_list=at_list, layer=layer, what=expression, zorder=zorder, tag=tag, behind=behind, atl=atl
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "renpy/exports/displayexports.py", line 498, in show
-    img = i(img)  # type: ignore
-          ~^^^^^                
-  File "renpy/display/movetransition.py", line 555, in MoveTransition
-    raise Exception(
-        "MoveTransition can only be applied to one or all layers, not %s." % type(widget).__name__
-    )
-Exception: MoveTransition can only be applied to one or all layers, not Placeholder.
+  File "game/script.rpy", line 3, in script
+    define n = Character("Nyra", "#4e7ac2")
+  File "renpy/ast.py", line 2463, in execute
+    self.set()
+    ~~~~~~~~^^
+  File "renpy/ast.py", line 2475, in set
+    value = renpy.python.py_eval_bytecode(self.code.bytecode)
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1298, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/script.rpy", line 3, in <module>
+    define n = Character("Nyra", "#4e7ac2")
+               ~~~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "renpy/character.py", line 1903, in Character
+    return type(kind)(name, kind=kind, **properties)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'kind' is an invalid keyword argument for str()
 
 macOS-15.6.1-arm64-arm-64bit arm64
 Ren'Py 8.5.2.26010301
 Maxwells Circus 1.0
-Sun Mar  1 00:15:27 2026
+Sun Mar  1 09:16:52 2026

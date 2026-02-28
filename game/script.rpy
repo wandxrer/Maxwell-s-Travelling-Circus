@@ -1,6 +1,6 @@
 ﻿# implement lofi
 # bug where maxwell and aloutette overlap in the end
-define n = Character("Nyra")
+define n = Character("Nyra", colour = "#4e7ac2")
 define m = Character ("Maxwell") 
 define s = Character ("Siegfried")
 define a = Character ("Alouette")
@@ -9,22 +9,24 @@ define ls = Character ("Lisbeth")
 define v1 = Character ("Voice One")
 define v2 = Character ("Voice Two")
 
+# maxwell
 image m = "maxwell mild.png"
 image mxevil = "maxwell sinister.png"
 image mxyippee = "maxwell yippee.png"
-image alkind = "alouette kind.png"
-image almenace = "alouette menace.png"
-image almur = "alouette murder.png"
-image alom = "alouette ominous.png"
+# alouette updated
+image alkind = "alkind2.png"
+image almur = "almurder2.png"
+image alom = "alouette ominous2.png"
+# siegfried
 image sconf = "siege conf.png"
 image snorm = "sieg norm.png"
 image som = "siege ominous.png"
 image ssad = "siege sad.png"
-# image nd = "nyra determined.png"
-# image ns = "nyra scared.png"
-# image nsh = "nyra shocked.png"
-# image nsm = "nyra smiling.png"
-
+# nyra updated
+image nd = "nyra determined.png"
+image ns = "nyra scared.png"
+image nsh = "nyra shocked.png"
+image nsm = "nyra smile.png"
 
 
 label start:
@@ -60,6 +62,7 @@ label house:
     n "Mrs. Loville? Is Lisbeth home?"
     msl "Nyra, is that you? I was just about to find you. Lisbeth didn’t return last night!"
 
+    hide nsm
     show nsh at left
 
     n "What? But I saw her walking with Anya."
@@ -299,6 +302,7 @@ label innercircus:
     hide ns with fade
 
     pause 1.0
+    hide snorm
     show snorm at right
     
     hide almur
