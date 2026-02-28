@@ -11,10 +11,11 @@ define v2 = Character ("Voice Two")
 image m = "maxwell happy.png"
 image mxevil = "maxwell evil.png"
 image mxyippee = "maxwell yippee.png"
-image alkind = 
+image alkind = "Alouette kind.png"
 
 label start:
 
+    scene black with Fade(1.0, 1.0, 1.0)
     scene town square night
     show nyra neutral at center
 
@@ -208,18 +209,4 @@ label innercircus:
     n "Join her!? What do you-"
     m "Good night, Nyra."
 
-    show black 
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
+    scene black with fade
