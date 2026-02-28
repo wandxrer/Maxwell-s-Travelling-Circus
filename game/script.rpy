@@ -1,11 +1,11 @@
 ﻿# implement lofi
 # bug where maxwell and aloutette overlap in the end
-define n = Character("Nyra")
-define m = Character ("Maxwell") 
-define s = Character ("Siegfried")
-define a = Character ("Alouette")
-define msl = Character ("Mrs. Loville")
-define ls = Character ("Lisbeth")
+define n = Character("Nyra", color="#88b9bd")
+define m = Character ("Maxwell", color= "#c21d0e") 
+define s = Character ("Siegfried", color = "#9e6b34")
+define a = Character ("Alouette", color = "#6d349e")
+define msl = Character ("Mrs. Loville", color = "#88b9bd")
+define ls = Character ("Lisbeth", color= "#88b9bd")
 define v1 = Character ("Voice One")
 define v2 = Character ("Voice Two")
 
@@ -19,28 +19,21 @@ image alkind = "alkind2.png"
 image almur = "almurder2.png"
 image alom = "alouette ominous2.png"
 # siegfried 
-image sconf = "siege conf2.png"
-image snorm = "siege normal2.png"
-image som = "siege ominous2.png"
-image ssad = "siege sad2.png"
+image sconf = "siegeconf4.png"
+image snorm = "siegehappy4.png"
+image som = "siegeom4.png"
+image ssad = "siegesad4.png"
 # nyra updated
 image nd = "nyra determined.png"
 image ns = "nyra scared.png"
 image nsh = "nyra shocked.png"
 image nsm = "nyra smile.png"
 
-# Character(“Amanda”, color=“#ffffff”)
-Character ("Nyra", colour = "#4b83dc")
-Character ("Maxwell", colour = "#611219" ) 
-Character ("Siegfried", colour = "#9e6b34")
-Character ("Alouette", colour = "#6d349e")
-Character ("Mrs. Loville", colour = "#88b9bd")
-Character ("Lisbeth", colour = "#88b9bd")
-
 label start:
 
     scene black with Fade(1.0, 1.0, 1.0)
     scene town 
+    play music "lofi.mp3" loop
     show nsm at left
 
     n "(Thank god they’re leaving in a few hours.)"
@@ -89,6 +82,7 @@ label house:
 
     hide nsm with dissolve
     scene black with Fade(1.0, 1.0, 1.0)
+    stop music
 
 label outsidecircus:
     play music "circus.mp3"

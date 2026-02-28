@@ -2,9 +2,21 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 35: invalid syntax
-    Character ("Alouette", colour "#6d349e")
-                                  ^^^^^^^^^
+File "game/script.rpy", line 33: expected statement.
+    m = Character("Maxwell", "#611219")
+      ^
+
+File "game/script.rpy", line 35: expected statement.
+    a = Character("Alouette", who_color = "#6d349e")
+      ^
+
+File "game/script.rpy", line 36: expected statement.
+    msl = Character("Mrs. Loville", who_color = "#88b9bd")
+        ^
+
+File "game/script.rpy", line 37: expected statement.
+    ls = Character("Lisbeth", who_color = "#88b9bd")
+       ^
 
 Ren'Py Version: Ren'Py 8.5.2.26010301
-Sun Mar  1 09:47:19 2026
+Sun Mar  1 10:09:40 2026
