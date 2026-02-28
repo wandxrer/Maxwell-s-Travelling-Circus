@@ -4,6 +4,9 @@ define m = Character ("Maxwell")
 define s = Character ("Siegfried")
 define a = Character ("Alouette")
 define msl = Character ("Mrs. Loville")
+define lz = Character ("Lisbeth")
+define v1 = Character ("Voice One")
+define v2 = Character ("Voice Two")
 
 image maxwell="maxwell yippee.png"
 
@@ -43,7 +46,7 @@ label house:
     n "Oh, yes. I just… I think I know where Lisbeth is. I’ll bring her home safely."
     msl "Oh, thank you, Nyra."
 
-label circus
+label outsidecircus:
     
     scene circus
 
@@ -59,13 +62,43 @@ label circus
     n "(Two…)"
     n "One!"
 
-    hide nyra -
+    hide nyra 
     scene black
 
-label inner circus
+label storeroom:
+
+    scene black
+
+    lz "Hello?"
+    lz "Nyra? Anya"
+    lz "Is anyone there?"
+
+    show nyra sad
+    
+    n "(..Ouch.)"
+    n "(It's so dark. My back hurts like crazy. But I think I'm in the circus!)"
+    v1 "The girl... Yes..."
+    n "(Someone is coming. I should hide.)"
+    v2 "She's going to be useless and you know it!"
+    v1 "If Wrath, of all people, can take an interest in her, it means-"
+    v2 "-Wrath’s insane. Just because the girl’s immune to most of Gluttony’s drugs and poisons doesn’t mean-"
+    v1 "Or it means we finally have a lab rat that won’t die after a few days."
+    v2 "Ugh, why are we always doing the heavy lifting? I thought Pride was recruiting more performers."
+    n "(The voices are getting further away...)"
+
+    # now they go in STORE ROOM
+
+    n "(So there was a light here after all.)"
+    n "(The girl they were talking about… I’m sure it’s Lisbeth. They’re planning to use her as a lab rat.)"
+    n "(I knew there was something off about this circus! The rumours... How can I get Lisbeth out of here?)"
+    "    "
+    n "(Hold on… Pride was recruiting performers…)"
+    n "You got this. Do it for Lisbeth!"
+
+label innercircus:
     
     scene inner circus people
-    show nyra -
+    show nyra at left 
     n "(It’s surprisingly normal here. I was expecting some ominous darkness but…)"
     n "(People are joking and chatting without a care in the world.)"
 
@@ -93,7 +126,8 @@ label inner circus
 
     scene black
     pause 2.0
-    scene inner circus 
+    scene inner circus empty
+
 
     pause 3.0
 
