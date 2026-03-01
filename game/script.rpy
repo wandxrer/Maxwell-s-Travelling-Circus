@@ -18,10 +18,10 @@ image mxyippee = "maxjoy3.png"
 image alkind = "alkind2.png"
 image almur = "almurder2.png"
 image alom = "alouette ominous2.png"
-# siegfried 
+# siegfried updated
 image sconf = "siegeconf4.png"
 image snorm = "siegehappy4.png"
-image som = "siegeom4.png"
+image som = "siege ominous4.png"
 image ssad = "siegesad4.png"
 # nyra updated
 image nd = "nyra determined.png"
@@ -33,7 +33,7 @@ label start:
 
     scene black with Fade(1.0, 1.0, 1.0)
     scene town 
-    play music "lofi.mp3" loop
+    play music "lofi.mp3" fadein 1.0 loop
     show nsm at left
 
     n "(Thank god they’re leaving in a few hours.)"
