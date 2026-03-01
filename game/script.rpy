@@ -1,5 +1,4 @@
-﻿# implement lofi
-# bug where maxwell and aloutette overlap in the end
+﻿
 define n = Character("Nyra", color="#88b9bd")
 define m = Character ("Maxwell", color= "#c21d0e") 
 define s = Character ("Siegfried", color = "#9e6b34")
@@ -9,7 +8,6 @@ define ls = Character ("Lisbeth", color= "#88b9bd")
 define v1 = Character ("Voice One")
 define v2 = Character ("Voice Two")
 
-#updated for cropped movement
 # maxwell updated
 image m = "maxhappy3.png"
 image mxevil = "maxevil3.png"
@@ -30,17 +28,22 @@ image nsh = "nyra shocked.png"
 image nsm = "nyra smile.png"
 
 label start:
+    scene black
+    "(Maxwell’s Travelling Circus.)"
+    "(The continent’s largest underground criminal agency.)"
+    "(Or at least that’s what people believe. There’s no definite proof though.)"
+    "(But wherever they go, calamity follows.)"
 
     scene black with Fade(1.0, 1.0, 1.0)
     scene town 
     play music "lofi.mp3" fadein 1.0 loop
-    show nsm at left
+    show nsm
 
     n "(Thank god they’re leaving in a few hours.)"
     n "(Nothing’s happened to our town so far, but I have a feeling something’s going to go wrong soon...)"
 
     hide nsm
-    show ns at left
+    show ns
 
     n "(Speaking of things going wrong, where’s Lisbeth? We promised to walk home together.)"
     n "Lisbeth, where are you?" with vpunch
@@ -66,7 +69,18 @@ label house:
     hide nsm
     show nsh at left
 
-    n "What? But I saw her walking with Anya."
+menu anya:
+    "Didn't Anya walk home with her?":
+        jump house1
+                       
+    "What? But I saw her walking with Anya.":
+        jump house1
+                
+                
+
+        
+   
+label house1:
 
     show ns at left
 
